@@ -12,16 +12,17 @@ export const loader = async () => {
 export default function Blog() {
   const data = useLoaderData<typeof loader>();
   return (
-    <div>
+    <div className="max-w-md">
       This is the blog.
-      <ul>
-        {data.postList.map((post) => (
-          <li key={post.id}>
-            <Card postId={post.id} postTitle={post.title}></Card>
-          </li>
-        ))}
-      </ul>
-      <Outlet />
+      <div className="flex flex-row">
+        <ul>
+          {data.postList.map((post) => (
+            <li key={post.id}>
+              <Card postId={post.id} postTitle={post.title}></Card>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }

@@ -9,7 +9,6 @@ export async function getPost(id: string) {
 }
 
 export const loader = async ({ params }: LoaderArgs) => {
-  console.log(params);
   invariant(params.postId, `params.id is required`);
 
   const post = await getPost(params.postId);
@@ -22,11 +21,22 @@ export const loader = async ({ params }: LoaderArgs) => {
 export default function PostId() {
   const { post } = useLoaderData<typeof loader>();
   return (
-    <main className="mx-auto max-w-4xl">
+    <article className="mx-auto max-w-4xl prose">
       <h1 className="my-6 border-b-2 text-center text-3xl">
         Some Post: {post.title}
       </h1>
       <p>Content: {post.content}</p>
-    </main>
+      <ul>
+        <li>testr 1</li>
+        <li>testr 12</li>
+      </ul>
+      <pre>
+        <code className="language-js">
+          module.exports = {"{"}
+          test: [],
+          {"}"}
+        </code>
+      </pre>
+    </article>
   );
 }
