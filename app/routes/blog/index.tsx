@@ -15,7 +15,7 @@ export default function Blog() {
     <div className="max-w-md">
       This is the blog.
       <div className="flex flex-row">
-        <ul>
+        <ul className="flex">
           {data.postList.map((post) => (
             <li key={post.id}>
               <Card postId={post.id} postTitle={post.title}></Card>

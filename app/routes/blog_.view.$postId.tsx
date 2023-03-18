@@ -21,7 +21,7 @@ export const loader = async ({ params }: LoaderArgs) => {
 export default function PostId() {
   const { post } = useLoaderData<typeof loader>();
   return (
-    <article className="mx-auto max-w-4xl prose">
+    <article className="mx-auto max-w-4xl prose bg-slate-200 flex-grow min-h-full mb-4 p-5 shadow-2xl">
       <h1 className="my-6 border-b-2 text-center text-3xl">
         Some Post: {post.title}
       </h1>

@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import clsx from "clsx";
 import { NavLink } from "react-router-dom";
 
 export const Navbar = () => {
@@ -9,7 +9,7 @@ export const Navbar = () => {
         <NavLink
           to="/"
           className={({ isActive }) =>
-            classNames(
+            clsx(
               isActive ? styling.active : styling.inactive,
               "flex",
               "items-center"
@@ -21,7 +21,7 @@ export const Navbar = () => {
         <NavLink
           to="blog"
           className={({ isActive }) =>
-            classNames(isActive ? styling.active : styling.inactive)
+            clsx(isActive ? styling.active : styling.inactive)
           }
         >
           Blog

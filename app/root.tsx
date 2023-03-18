@@ -2,7 +2,7 @@ import type { LinksFunction } from "@remix-run/node";
 import { Links, LiveReload, Outlet } from "@remix-run/react";
 import { Navbar } from "./components/navbar/navbar";
 import stylesheet from "~/tailwind.css";
-import bg from "../public/images/wave-haikei.svg";
+import clsx from "clsx";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
@@ -17,11 +17,21 @@ export default function App() {
         <Links />
       </head>
       <body
-        className="min-h-screen bg-no-repeat bg-cover"
-        style={{ backgroundImage: `url(${bg})` }}
+        className={clsx(
+          ["min-h-screen", "bg-gradient-to-b", "from-g1", "via-g2", "to-g3"],
+          [
+            "lg:bg-no-repeat",
+            "lg:bg-cover",
+            "lg:bg-left",
+            "lg:bg-[url('./images/wave-haikei.svg')]",
+            "lg:bg-center",
+          ]
+        )}
       >
-        <Navbar />
-        <Outlet />
+        <div className="flex flex-col min-h-screen">
+          <Navbar />
+          <Outlet />
+        </div>
         <LiveReload />
       </body>
     </html>
