@@ -1,5 +1,5 @@
 import type { LinksFunction } from "@remix-run/node";
-import { Links, LiveReload, Outlet } from "@remix-run/react";
+import { Links, LiveReload, Outlet, Scripts } from "@remix-run/react";
 import { Navbar } from "./components/navbar/navbar";
 import stylesheet from "~/tailwind.css";
 import clsx from "clsx";
@@ -13,6 +13,7 @@ export default function App() {
     <html lang="en">
       <head>
         <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width" />
         <title>Will Corrigan</title>
         <Links />
       </head>
@@ -33,6 +34,7 @@ export default function App() {
           <Outlet />
         </div>
         <LiveReload />
+        <Scripts />
       </body>
     </html>
   );
